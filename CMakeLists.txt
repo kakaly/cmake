@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.12.2)
+project (hello)
+include_directories(include)
+add_library(hello STATIC src/hello_world.cpp)
+add_executable(libtest src/main.cpp)
+target_link_libraries(libtest hello)

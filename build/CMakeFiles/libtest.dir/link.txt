@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/libtest.dir/src/main.cpp.o  -o libtest libhello.a 

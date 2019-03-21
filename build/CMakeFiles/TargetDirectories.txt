@@ -1,0 +1,4 @@
+/home/karthik/cmake_learn/build/CMakeFiles/rebuild_cache.dir
+/home/karthik/cmake_learn/build/CMakeFiles/edit_cache.dir
+/home/karthik/cmake_learn/build/CMakeFiles/libtest.dir
+/home/karthik/cmake_learn/build/CMakeFiles/hello.dir
