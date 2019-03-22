@@ -56,6 +56,52 @@ CMAKE_BINARY_DIR = /home/karthik/cmake_learn/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/karthik/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/karthik/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/karthik/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/karthik/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/karthik/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/karthik/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"linapp\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +123,28 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/home/karthik/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/home/karthik/bin/cpack --config ./CPackSourceConfig.cmake /home/karthik/cmake_learn/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,57 +179,57 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named libtest
+# Target rules for targets named addnum
 
 # Build rule for target.
-libtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libtest
-.PHONY : libtest
+addnum: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 addnum
+.PHONY : addnum
 
 # fast build rule for target.
-libtest/fast:
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/build
-.PHONY : libtest/fast
+addnum/fast:
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/build
+.PHONY : addnum/fast
 
 #=============================================================================
-# Target rules for targets named hello
+# Target rules for targets named addnumapp
 
 # Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
+addnumapp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 addnumapp
+.PHONY : addnumapp
 
 # fast build rule for target.
-hello/fast:
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-.PHONY : hello/fast
+addnumapp/fast:
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/build
+.PHONY : addnumapp/fast
 
-src/hello_world.o: src/hello_world.cpp.o
+src/add_num.o: src/add_num.cpp.o
 
-.PHONY : src/hello_world.o
+.PHONY : src/add_num.o
 
 # target to build an object file
-src/hello_world.cpp.o:
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/hello_world.cpp.o
-.PHONY : src/hello_world.cpp.o
+src/add_num.cpp.o:
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/src/add_num.cpp.o
+.PHONY : src/add_num.cpp.o
 
-src/hello_world.i: src/hello_world.cpp.i
+src/add_num.i: src/add_num.cpp.i
 
-.PHONY : src/hello_world.i
+.PHONY : src/add_num.i
 
 # target to preprocess a source file
-src/hello_world.cpp.i:
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/hello_world.cpp.i
-.PHONY : src/hello_world.cpp.i
+src/add_num.cpp.i:
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/src/add_num.cpp.i
+.PHONY : src/add_num.cpp.i
 
-src/hello_world.s: src/hello_world.cpp.s
+src/add_num.s: src/add_num.cpp.s
 
-.PHONY : src/hello_world.s
+.PHONY : src/add_num.s
 
 # target to generate assembly for a file
-src/hello_world.cpp.s:
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/hello_world.cpp.s
-.PHONY : src/hello_world.cpp.s
+src/add_num.cpp.s:
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/src/add_num.cpp.s
+.PHONY : src/add_num.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -169,7 +237,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -178,7 +246,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -187,7 +255,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -196,13 +264,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... libtest"
-	@echo "... hello"
-	@echo "... src/hello_world.o"
-	@echo "... src/hello_world.i"
-	@echo "... src/hello_world.s"
+	@echo "... addnum"
+	@echo "... package"
+	@echo "... addnumapp"
+	@echo "... package_source"
+	@echo "... src/add_num.o"
+	@echo "... src/add_num.i"
+	@echo "... src/add_num.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

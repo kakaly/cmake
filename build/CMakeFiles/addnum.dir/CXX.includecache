@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../include/hello_world.h
+../include/add_num.h
 
-/home/karthik/cmake_learn/src/main.cpp
-hello_world.h
-/home/karthik/cmake_learn/src/hello_world.h
-iostream
--
+/home/karthik/cmake_learn/src/add_num.cpp
+add_num.h
+/home/karthik/cmake_learn/src/add_num.h
 

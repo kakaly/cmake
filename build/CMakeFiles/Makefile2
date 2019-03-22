@@ -65,76 +65,76 @@ CMAKE_SOURCE_DIR = /home/karthik/cmake_learn
 CMAKE_BINARY_DIR = /home/karthik/cmake_learn/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/libtest.dir
+# Target rules for target CMakeFiles/addnum.dir
 
 # All Build rule for target.
-CMakeFiles/libtest.dir/all: CMakeFiles/hello.dir/all
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/depend
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/karthik/cmake_learn/build/CMakeFiles --progress-num=3,4 "Built target libtest"
-.PHONY : CMakeFiles/libtest.dir/all
+CMakeFiles/addnum.dir/all:
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/depend
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/karthik/cmake_learn/build/CMakeFiles --progress-num=1,2 "Built target addnum"
+.PHONY : CMakeFiles/addnum.dir/all
 
 # Include target in all.
-all: CMakeFiles/libtest.dir/all
+all: CMakeFiles/addnum.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/libtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karthik/cmake_learn/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libtest.dir/all
+CMakeFiles/addnum.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karthik/cmake_learn/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/addnum.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/karthik/cmake_learn/build/CMakeFiles 0
-.PHONY : CMakeFiles/libtest.dir/rule
+.PHONY : CMakeFiles/addnum.dir/rule
 
 # Convenience name for target.
-libtest: CMakeFiles/libtest.dir/rule
+addnum: CMakeFiles/addnum.dir/rule
 
-.PHONY : libtest
-
-# clean rule for target.
-CMakeFiles/libtest.dir/clean:
-	$(MAKE) -f CMakeFiles/libtest.dir/build.make CMakeFiles/libtest.dir/clean
-.PHONY : CMakeFiles/libtest.dir/clean
+.PHONY : addnum
 
 # clean rule for target.
-clean: CMakeFiles/libtest.dir/clean
+CMakeFiles/addnum.dir/clean:
+	$(MAKE) -f CMakeFiles/addnum.dir/build.make CMakeFiles/addnum.dir/clean
+.PHONY : CMakeFiles/addnum.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/addnum.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/hello.dir
+# Target rules for target CMakeFiles/addnumapp.dir
 
 # All Build rule for target.
-CMakeFiles/hello.dir/all:
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/karthik/cmake_learn/build/CMakeFiles --progress-num=1,2 "Built target hello"
-.PHONY : CMakeFiles/hello.dir/all
+CMakeFiles/addnumapp.dir/all: CMakeFiles/addnum.dir/all
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/depend
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/karthik/cmake_learn/build/CMakeFiles --progress-num=3,4 "Built target addnumapp"
+.PHONY : CMakeFiles/addnumapp.dir/all
 
 # Include target in all.
-all: CMakeFiles/hello.dir/all
+all: CMakeFiles/addnumapp.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/hello.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/karthik/cmake_learn/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hello.dir/all
+CMakeFiles/addnumapp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/karthik/cmake_learn/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/addnumapp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/karthik/cmake_learn/build/CMakeFiles 0
-.PHONY : CMakeFiles/hello.dir/rule
+.PHONY : CMakeFiles/addnumapp.dir/rule
 
 # Convenience name for target.
-hello: CMakeFiles/hello.dir/rule
+addnumapp: CMakeFiles/addnumapp.dir/rule
 
-.PHONY : hello
-
-# clean rule for target.
-CMakeFiles/hello.dir/clean:
-	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/clean
-.PHONY : CMakeFiles/hello.dir/clean
+.PHONY : addnumapp
 
 # clean rule for target.
-clean: CMakeFiles/hello.dir/clean
+CMakeFiles/addnumapp.dir/clean:
+	$(MAKE) -f CMakeFiles/addnumapp.dir/build.make CMakeFiles/addnumapp.dir/clean
+.PHONY : CMakeFiles/addnumapp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/addnumapp.dir/clean
 
 .PHONY : clean
 

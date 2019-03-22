@@ -1,0 +1,9 @@
+Package: addnum
+Version: 0.1.1
+Section: devel
+Priority: optional
+Architecture: amd64
+Installed-Size: 18
+Maintainer: KK
+Description: addnum built using CMake
+
